@@ -1,0 +1,14 @@
+-  title: 'About Me'
+   desc: 'Learn About Alan'
+   source: 'about.html'
+   nav_id: 'nav-about'
+   id: 'about'
+   order: 1
+
+-  title: 'Blog'
+   desc: "Check Out Alan's Blog"
+   source: 'blog.html'
+   nav_id: 'nav-blog'
+   id: 'blog'
+   order: 2
+

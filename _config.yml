@@ -1,16 +1,19 @@
 # Site settings
 title: Alan Penkar
-description: 'Data Scientist and Computing Enthusiast'
+description: 'Data Scientist'
 url: 'https://Alan-Penkar.github.io'
-baseurl: '/'
+#For Prod
+#baseurl: '/'
+#For Local Dev
+baseurl: '/_site/'
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
 
 author:
   name: 'Alan Penkar'
   email: alan@alanpenkar.com
-  twitter_username: Alan_Penkar
-  facebook_username: indexx
+  #twitter_username: Alan_Penkar
+  #facebook_username: indexx
   github_username:  Alan-Penkar
   linkedin_username:  Alan-Penkar
 

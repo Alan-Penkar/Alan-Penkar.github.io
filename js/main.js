@@ -8,14 +8,6 @@ $(document).ready(function () {
   $('a.nav-button').click(function (e) {
     if ($('.panel-cover').hasClass('panel-cover--collapsed')) return
     currentWidth = $('.panel-cover').width()
-      if (window.location.hash && window.location.hash =='#blog'){
-          document.getElementById("AboutElem").style.visibility = "hidden";
-          document.getElementById("BlogElem").style.visibility = "visible";
-      } else if (window.location.hash && window.location.hash =='#about'){
-          document.getElementById("AboutElem").style.visibility = "visible";
-          document.getElementById("BlogElem").style.visibility = "hidden";
-      }
-
       if (currentWidth < 960) {
       $('.panel-cover').addClass('panel-cover--collapsed')
       $('.content-wrapper').addClass('animated slideInRight')
@@ -26,18 +18,12 @@ $(document).ready(function () {
   })
 
   if (window.location.hash && window.location.hash == '#blog') {
-    document.getElementById("AboutElem").style.visibility = "hidden";
-    document.getElementById("BlogElem").style.visibility = "visible";
     $('.panel-cover').addClass('panel-cover--collapsed')
   }
 
     if (window.location.hash && window.location.hash == '#about') {
-        document.getElementById("AboutElem").style.visibility = "visible";
-        document.getElementById("BlogElem").style.visibility = "hidden";
         $('.panel-cover').addClass('panel-cover--collapsed')
     }
-
-
 
   if (window.location.pathname !== '{{ site.baseurl }}/' && window.location.pathname !== '{{ site.baseurl }}/index.html') {
     $('.panel-cover').addClass('panel-cover--collapsed')

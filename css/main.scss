@@ -1,4 +1,5 @@
 ---
+layout: null
 ---
 @import "uno";
 @import "tables";
@@ -57,3 +58,20 @@ pre.highlight code,
   border: 3px solid #fff;
   border-radius:100%;
 }
+
+/* Custom CSS - Alan */
+
+{% for category in site.data.categories | sort: 'order' %}
+#{{ category.id }} {
+    display:none;
+}
+#{{ category.id }}:target {
+  display:block;
+}
+{% endfor %}
+
+ h2 .Page {
+   margin-top:0em;
+   text-align: center;
+
+ }
