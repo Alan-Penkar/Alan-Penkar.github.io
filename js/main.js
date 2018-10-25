@@ -18,10 +18,14 @@ $(document).ready(function () {
   })
 
   if (window.location.hash && window.location.hash == '#blog') {
+    document.getElementById("AboutElem").style.visibility = "hidden";
+    document.getElementById("BlogElem").style.visibility = "visible";
     $('.panel-cover').addClass('panel-cover--collapsed')
   }
 
     if (window.location.hash && window.location.hash == '#about') {
+        document.getElementById("AboutElem").style.visibility = "visible";
+        document.getElementById("BlogElem").style.visibility = "hidden";
         $('.panel-cover').addClass('panel-cover--collapsed')
     }
 
