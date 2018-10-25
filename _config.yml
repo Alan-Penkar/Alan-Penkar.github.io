@@ -1,0 +1,43 @@
+# Site settings
+title: Alan Penkar
+description: 'Doin Data Stuff'
+url: 'https://Alan-Penkar.github.io'
+baseurl: '/'
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
+
+author:
+  name: 'Alan Penkar'
+  email: alan@alanpenkar.com
+  twitter_username: Alan_Penkar
+  facebook_username: indexx
+  github_username:  Alan-Penkar
+  linkedin_username:  Alan-Penkar
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+plugins: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']

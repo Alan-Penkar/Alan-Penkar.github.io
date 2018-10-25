@@ -1,0 +1,18 @@
+---
+layout: null
+sitemap:
+exclude: 'yes'
+---
+
+/* TEAM */
+Developer & Designer: Alan Penkar
+Twitter: @alan_penkar
+Site: http://alanpenkar.com
+Location: Atlanta, GA, USA
+						
+
+/* SITE */
+Last update: {{ site.time | date: "%Y/%m/%d" }}
+Standards: HTML5, CSS3
+Components: Jekyll, Jekyll-Uno
+Software: Sublime Text
