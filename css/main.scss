@@ -70,8 +70,15 @@ pre.highlight code,
 }
 {% endfor %}
 
- h2 .Page {
+ h2.Page {
    margin-top:0em;
    text-align: center;
+   margin-bottom: 20px;
 
  }
+
+img.inpage {
+  float: right;
+  width: 25%;
+  margin: 5px;
+}
