@@ -3,9 +3,9 @@ title: Alan Penkar
 description: 'Data Scientist'
 url: 'https://Alan-Penkar.github.io'
 #For Prod
-baseurl: '/'
+#baseurl: '/'
 #For Local Dev
-#baseurl: '/_site/'
+baseurl: '/_site/'
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
 
