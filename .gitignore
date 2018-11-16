@@ -1,6 +1,8 @@
 _site
 .sass-cache
 .jekyll-metadata
+*.env
 *.sublime-project
 *.sublime-workspace
 .DS_Store
+s3_website.yml
