@@ -2,8 +2,11 @@
 title: Alan Penkar
 description: 'Data Scientist'
 url: 'https://Alan-Penkar.github.io'
-#For Prod
-baseurl: '/'
+
+#For Prod on Github
+#baseurl: '/'
+#For Prod on AWS
+baseurl: ''
 #For Local Dev
 #baseurl: '/_site/'
 # google_analytics: 'UA-XXXXXX-X'
