@@ -4,5 +4,6 @@ _site
 *.env
 *.sublime-project
 *.sublime-workspace
+.idea*
 .DS_Store
 s3_website.yml
