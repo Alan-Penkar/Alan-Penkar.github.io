@@ -2,7 +2,8 @@
 layout: default
 robots: noindex
 ---
-{% for category in site.data.categories | sort: 'order' %}
+{% assign categories = site.data.categories | sort: 'order' %}
+{% for category in categories %}
 {% capture elemID %}{{ category.id }}{%endcapture%}
 {% include {{ category.source }} elID= elemID  %}
 {% endfor %}
