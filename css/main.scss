@@ -61,6 +61,21 @@ pre.highlight code,
 
 /* Custom CSS - Alan */
 
+.back-button {
+    align:right;
+    margin: 5px 0;
+    padding: 5px 10px;
+}
+
+.back-button a {
+    text-align: right;
+    color: #2244c8;
+    display: inline-block;
+    font-size: 15px;
+    margin: 5px 0;
+    padding: 5px 10px;
+}
+
 {% assign categories = site.data.categories | sort: 'order' %}
 {% for category in categories %}
 

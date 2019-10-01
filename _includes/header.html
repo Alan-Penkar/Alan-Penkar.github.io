@@ -22,7 +22,7 @@
             <ul class="navigation">
 
               {% for category in site.data.categories | sort: 'order' %}
-              <li class="navigation__item"><a href="#{{ category.id }}" title="{{ category.desc }}" class="nav-button" id="nav-{{ category.id }}">{{ category.title }}</a></li>
+              <li class="navigation__item"><a href="{{ site.url }}#{{ category.id }}" title="{{ category.desc }}" class="nav-button" id="nav-{{ category.id }}">{{ category.title }}</a></li>
               {% endfor %}
 
             </ul>
