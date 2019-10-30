@@ -1,0 +1,75 @@
+---
+title:  "Altair Plots in Jekyll Markdown"
+date:   2017-01-02 15:00:00
+categories: [code]
+tags: [code, d3js]
+---
+ I've used vegaEmbed to target an element `<div id="example">` in this document:
+
+<div id="example"></div>
+
+<style>
+
+div.example {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.box {
+  font: 10px sans-serif;
+}
+
+.box line,
+.box rect,
+.box circle {
+  fill: #fff;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.box .center {
+  stroke-dasharray: 3,3;
+}
+
+.box .outlier {
+  fill: none;
+  stroke: #ccc;
+}
+
+</style>
+{% include vega-head.html %}
+<script type="text/javascript">
+    var spec = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+      "config": {
+        "view": {
+          "height": 300,
+          "width": 400
+        }
+      },
+      "data": {
+        "url": "https://vega.github.io/vega-datasets/data/cars.json"
+      },
+      "encoding": {
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "Horsepower",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        }
+      },
+      "mark": "point"
+    };
+    var opt = {"renderer": "canvas", "actions": false};
+    vegaEmbed("#example", spec, opt);
+  </script>
+
+Things to keep in mind:
+
+* Include vega, vegaEmbed, and vegaLite from vega-head.html
+* Include the local CSS and JavaScript
