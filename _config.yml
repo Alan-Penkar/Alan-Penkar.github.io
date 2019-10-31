@@ -1,7 +1,8 @@
 # Site settings
-title: 'Alan Penkar's Website'
-description: 'Alan Penkar - Data Scientist - Finding patterns in numbers since 1987'
+title: "Alan Penkar"
+description: 'Data Scientist'
 url: 'https://www.alanpenkar.com'
+toptitle: "Alan Penkar - Data Scientist - Finding patterns in numbers since 1987"
 
 #For Prod on Github
 #baseurl: '/'
