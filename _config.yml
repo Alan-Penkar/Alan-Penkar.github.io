@@ -1,7 +1,7 @@
 # Site settings
 title: Alan Penkar
 description: 'Data Scientist'
-url: 'https://www.alanpenkar.com'
+url: 'https://test.alanpenkar.com'
 
 #For Prod on Github
 #baseurl: '/'
