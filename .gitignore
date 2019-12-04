@@ -11,5 +11,6 @@ deploy.bash
 test-deploy.bash
 node_modules
 src/assets/bundle.js
+src/assets/js/bundle.js
 public
 

@@ -15,6 +15,16 @@ module.exports = {
     rules:[ 
       // rules for modules (configure loaders, parser options, etc.)
       {
+  		test: /\.(jpg|png)$/,
+  		use: {
+    		loader: "file-loader",
+    		options: {
+            name: "[name].[ext]",
+            outputPath: "./../../public/assets/images/"
+    		},
+    	}
+	},
+	{
         test: /\.jsx?$/,
         
         exclude: /(node_modules)/,
