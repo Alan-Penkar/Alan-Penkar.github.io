@@ -8,3 +8,8 @@ _site
 .DS_Store
 s3_website.yml
 deploy.bash
+test-deploy.bash
+node_modules
+src/assets/bundle.js
+public
+

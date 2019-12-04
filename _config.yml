@@ -29,7 +29,8 @@ defaults:
         layout: 'post'
 
 # Build settings
-destination: _site
+destination: public
+source: src
 paginate: 10
 permalink: /:year/:title/
 markdown: kramdown
@@ -46,4 +47,4 @@ kramdown:
   hard_wrap: false
 
 plugins: ['jekyll-paginate','jekyll-include-cache']
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png','node_modules']
