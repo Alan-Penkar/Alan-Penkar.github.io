@@ -3,7 +3,6 @@ import React from 'react';
 
 
 const ChatboxHeader = (props) => {
-    console.log(window.location.hash);
     return (
     <div className="chatbox__title">
         <h5 onClick={props.BarClickHandle}><a href={`${window.location.hash}`}>{props.title}</a></h5>
