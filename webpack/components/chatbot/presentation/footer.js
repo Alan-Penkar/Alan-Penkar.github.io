@@ -22,10 +22,12 @@ class ChatboxFooter extends React.Component {
 
     submitText(event){
         let message = this.textRef.current.value;
-        this.textRef.current.value = "";
-        this.textRef.current.placeholder="Type your message here...";
-        this.setState({hasText:false});
-        this.props.parentTextCallback(message);
+        if (message !==""){
+            this.textRef.current.value = "";
+            this.textRef.current.placeholder="Type your message here...";
+            this.setState({hasText:false});
+            this.props.parentTextCallback(message);
+        }        
     }
 
 
