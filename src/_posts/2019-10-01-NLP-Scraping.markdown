@@ -110,10 +110,10 @@ Now that we've got our corpus in place, stay tuned for the next blog post on pre
 [bs4-link]: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 [requests-link]: https://requests.readthedocs.io/en/master/
 [github-link]: https://github.com/Alan-Penkar/NLP-NewsCategorization/blob/master/get_articles.py
-[df-head]: {{ site.baseurl }}/images/blog/NLP-Scraping/df_head.png "Initial Dataset"
-[link-samples]: {{ site.baseurl }}/images/blog/NLP-Scraping/random_links.png "Some Random Links"
-[double-count]: {{ site.baseurl }}/images/blog/NLP-Scraping/double_count.png "Results of Double Link Check"
-[text-1]: {{ site.baseurl }}/images/blog/NLP-Scraping/text_1.png "First Form of Parsing"
-[text-2]: {{ site.baseurl }}/images/blog/NLP-Scraping/text_2.png "Second Form of Parsing"
-[chrome-inspector]: {{ site.baseurl }}/images/blog/NLP-Scraping/inspector_output.png "HTML of failing site"
-[parsing-test]: {{ site.baseurl }}/images/blog/NLP-Scraping/parsing_test.png "Test Parsing Logic on Sample"
+[df-head]: /assets/images/blog/NLP-Scraping/df_head.png "Initial Dataset"
+[link-samples]: /assets/images/blog/NLP-Scraping/random_links.png "Some Random Links"
+[double-count]: /assets/images/blog/NLP-Scraping/double_count.png "Results of Double Link Check"
+[text-1]: /assets/images/blog/NLP-Scraping/text_1.png "First Form of Parsing"
+[text-2]: /assets/images/blog/NLP-Scraping/text_2.png "Second Form of Parsing"
+[chrome-inspector]: /assets/images/blog/NLP-Scraping/inspector_output.png "HTML of failing site"
+[parsing-test]: /assets/images/blog/NLP-Scraping/parsing_test.png "Test Parsing Logic on Sample"

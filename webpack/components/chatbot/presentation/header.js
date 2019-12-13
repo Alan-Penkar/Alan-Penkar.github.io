@@ -3,9 +3,10 @@ import React from 'react';
 
 
 const ChatboxHeader = (props) => {
+    let hashLink = window.location.hash!==""?window.location.hash:"#";
     return (
     <div className="chatbox__title">
-        <h5 onClick={props.BarClickHandle}><a href={`${window.location.hash}`}>{props.title}</a></h5>
+        <h5 onClick={props.BarClickHandle}><a href={hashLink}>{props.title}</a></h5>
         <button className="chatbox__title__tray" onClick={props.MinClickHandle}>
             <span></span>
         </button>
