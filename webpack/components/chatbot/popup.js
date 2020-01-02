@@ -75,10 +75,12 @@ class Chatbox extends React.Component {
       });
     }
     this.setState(this.state);
-    this.getResponse();
+    this.getResponse(message);
   }
 
-  getResponse(){
+  getResponse(message){
+    console.log(message);
+    console.log({"text":JSON.stringify(message)});
     this.setState({
         fetching: true,
         vizstate: this.state.vizstate,
@@ -87,7 +89,13 @@ class Chatbox extends React.Component {
 
     this.forceUpdate();
     //let newDate = new Date();
-    fetch(API_ADDRESS)
+    fetch(API_ADDRESS,{
+      method:"POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({"text":message})
+    })
     .then(res => {return res.json();})
     .then(data => {return {message:data.message,
                            newDate:new Date()};
