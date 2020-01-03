@@ -22,7 +22,6 @@
     "file-loader": "^5.0.2",
     "react": "^16.12.0",
     "react-addons-update": "^15.6.2",
-    "react-async": "^10.0.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
     "react-scroll": "^1.7.14",

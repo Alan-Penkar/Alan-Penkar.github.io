@@ -9,12 +9,14 @@ $(document).ready(function () {
     var currentWidth = $('.panel-cover').width();
     if (currentWidth > 960) {
       $('.panel-cover').addClass('panel-cover--collapsed')
-      //$('.panel-cover').animate({'max-width': '530px', 'width': '40%'}, 400, swing = 'swing', function () {})
+      $('#chat').addClass('show')
+      $('.panel-cover').animate({'max-width': '530px', 'width': '40%'}, 400, swing = 'swing', function () {})
       //$('.content-wrapper').addClass('animated slideInRight')
       //$('.content-wrapper__inner').addClass('animated slideInRight')
       //$('.panel-cover').addClass('panel-cover--collapsed')
     } else {
       $('.panel-cover').css('max-width', currentWidth)
+      $('#chat').addClass('show')
       //$('.panel-cover').animate({'max-width': '530px', 'width': '40%'}, 400, swing = 'swing', function () {})
       $('.panel-cover').addClass('panel-cover--collapsed')
     }
@@ -22,11 +24,8 @@ $(document).ready(function () {
 
   if (window.location.hash && (window.location.hash == '#blog' || window.location.hash == '#about')) {
     $('.panel-cover').addClass('panel-cover--collapsed')
-  } 
-
-  //if (window.location.hash && window.location.hash == '#about') {
-  //  $('.panel-cover').addClass('panel-cover--collapsed')
-  //}
+    $('#chat').addClass('show')
+  }
 
   if (window.location.pathname !== '{{ site.baseurl }}/' && window.location.pathname !== '{{ site.baseurl }}/index.html') {
     $('.panel-cover').addClass('panel-cover--collapsed')

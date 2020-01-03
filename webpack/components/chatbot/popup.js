@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Scroll from 'react-scroll';
+//import { useAsync, IfPending, IfFulfilled, IfRejected } from "react-async"
 
 import MessageList from './messages'
 import Loading from './loading'
@@ -17,7 +18,7 @@ const API_ADDRESS = "https://2lt638vo5f.execute-api.us-east-1.amazonaws.com/dev/
 let newDate = new Date();
 let scroll = Scroll.animateScroll;
 
-async function fetchMessages(id){
+/*async function fetchMessages(id){
   let response = await fetch(API_ADDRESS);
   let json = await response.json();
   console.log(json);
@@ -28,24 +29,21 @@ async function fetchMessages(id){
   .catch(err => {alert(err);this.state.fetching=false; this.setState(this.state); this.FooterRef.alterFetchingState(false);});;
   console.log(result)
   return result;
-}
-
-var initialMessages = fetchMessages(null);
+}*/
 
 class Chatbox extends React.Component {
 
   static defaultProps = {
     "title":"Ask About Alan!",
     "vizstate":"tray",
-    "messages": fetchMessages(null)
+    "messages": []
   };
 
   constructor(props) {
     super(props);
-    console.log(this.props)
     this.state = {
-      fetching:false,
-      messages: initialMessages,
+      fetching:true,
+      messages: this.props.messages,
       vizstate: this.props.vizstate
     };
 
@@ -57,7 +55,29 @@ class Chatbox extends React.Component {
     this.submitText = this.submitText.bind(this);
     this.MessagesRef = React.createRef();
     this.FooterRef = React.createRef();
+    this.fetchMessages(null);
   }
+
+  fetchMessages(id) {
+    this.setState({
+      fetching: true,
+      vizstate: this.state.vizstate,
+      messages: this.state.messages
+    });
+    this.forceUpdate();
+    fetch(API_ADDRESS)
+    .then(res => {return res.json();})
+    .then(data => {this.state.messages.push(...data);
+    })
+    .then(n => {this.setState({
+      fetching: false,
+      vizstate: this.state.vizstate,
+      messages: this.state.messages
+      });
+    })
+    .then(n => {this.forceUpdate();})
+    .catch(err => {alert(err);this.state.fetching=false; this.setState(this.state); this.FooterRef.alterFetchingState(false);});
+    }
 
   toggle_box(event){
     let priorvs = this.state.vizstate;

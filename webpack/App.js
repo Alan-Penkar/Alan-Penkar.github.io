@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import "@babel/polyfill";
 import Chatbox from './components/chatbot/popup'
-import {
-  BrowserRouter as Router,
-  HashRouter,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+
 
 class App extends Component {
   state = {
