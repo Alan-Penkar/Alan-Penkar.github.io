@@ -13,31 +13,43 @@ import LoadingGIF from '../../assets/typing1.gif'
 
 const FETCH_TIMEOUT = 5000;
 const defaultGreeting = "Hello, I'm Leopold the puppy AI!  My dad, Alan, created me to help you.  I love helping people, ask me anything you want about him!";
-const API_ADDRESS = "https://2lt638vo5f.execute-api.us-east-1.amazonaws.com/dev/dummyChatAPI";
+const API_ADDRESS = "https://2lt638vo5f.execute-api.us-east-1.amazonaws.com/dev/conversation";
 let newDate = new Date();
 let scroll = Scroll.animateScroll;
 
+async function fetchMessages(id){
+  let response = await fetch(API_ADDRESS);
+  let json = await response.json();
+  console.log(json);
+  return json;
+
+  let result = await fetch(API_ADDRESS)
+  .then(res => {return res.json()})
+  .catch(err => {alert(err);this.state.fetching=false; this.setState(this.state); this.FooterRef.alterFetchingState(false);});;
+  console.log(result)
+  return result;
+}
+
+var initialMessages = fetchMessages(null);
 
 class Chatbox extends React.Component {
+
   static defaultProps = {
     "title":"Ask About Alan!",
     "vizstate":"tray",
-    "messages": [
-                  {"sender":"a",
-                    "date":newDate.toDateString(),
-                    "time":newDate.getHours() + ":" + newDate.getMinutes().toString().padStart(2, "0") + ":" + newDate.getSeconds().toString().padStart(2, "0"),
-                    "messages":[defaultGreeting]
-                  }
-                ]
+    "messages": fetchMessages(null)
   };
 
   constructor(props) {
     super(props);
+    console.log(this.props)
     this.state = {
       fetching:false,
-      messages: this.props.messages,
+      messages: initialMessages,
       vizstate: this.props.vizstate
     };
+
+    console.log(this.state.messages);
 
     this.toggle_box = this.toggle_box.bind(this);
     this.close_box = this.close_box.bind(this);
@@ -79,8 +91,6 @@ class Chatbox extends React.Component {
   }
 
   getResponse(message){
-    console.log(message);
-    console.log({"text":JSON.stringify(message)});
     this.setState({
         fetching: true,
         vizstate: this.state.vizstate,
@@ -144,13 +154,15 @@ class Chatbox extends React.Component {
       <div className="container">
           <div className="row">
               <div className={`chatbox chatbox22 chatbox--${this.state.vizstate}`}>
+                
                 <ChatboxHeader BarClickHandle={this.toggle_box} MinClickHandle={this.min_box} CloseClickHandle={this.close_box}/>
-                <div className="chatbox__body" id="chatbody">
+                <div className={`chatbox__body ${this.state.vizstate==="open"?"visible":"hidden"}`} id="chatbody">
                   {this.state.messages.map( (messages) => {
                   return <MessageList sender={messages.sender} messages={messages.messages} date={messages.date} time={messages.time} ref={this.MessagesRef}/>})}
                   {this.state.fetching?<Loading sender="a"/>:null}
                 </div>
-              <ChatboxFooter parentTextCallback={this.submitText} ref={this.FooterRef}/>
+                <ChatboxFooter parentTextCallback={this.submitText} ref={this.FooterRef} vizstate={this.state.vizstate}/>
+                
             </div>
           </div>
       </div>)};

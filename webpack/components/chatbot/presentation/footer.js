@@ -6,7 +6,7 @@ function watchText(event){
 class ChatboxFooter extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {hasText:false, fetching:false};
+        this.state = {hasText:false, fetching:false, vizstate:props.vizstate};
         this.textRef = React.createRef();
         this.textHandler = this.textHandler.bind(this);
         this.submitText = this.submitText.bind(this);
@@ -33,13 +33,13 @@ class ChatboxFooter extends React.Component {
 
     render() {
       return (
-    <div className="panel-footer">
+    <div className={`panel-footer ${this.props.vizstate==="open"?"visible":"hidden"}`}>
     <div className="row">
       <div className="input-group">
         <input id="btn-input" type="text" className="form-control input-sm chat_set_height" placeholder="Type your message here..." tabIndex="0" dir="ltr" spellCheck="false" autoComplete="off" autoCorrect="off" autoCapitalize="off" contentEditable="true" onChange={this.textHandler} ref={this.textRef} />
     
         <span className="input-group-btn">
-          <button className={`btn bt_bg btn-sm btn-block ${this.state.hasText?"":"disabled"}`} id="btn-chat" onClick={this.submitText}>
+          <button className={`btn-secondary btn bt_bg btn-sm btn-block ${this.state.hasText?"":"disabled"}`} id="btn-chat" onClick={this.submitText}>
                 Send
           </button>
         </span>
